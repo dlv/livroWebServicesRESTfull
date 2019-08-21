@@ -1,13 +1,9 @@
 package br.com.livro.rest;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import javax.ws.rs.core.Application;
-
-import org.glassfish.jersey.jettison.JettisonFeature;
 
 public class MyApplication extends Application {
 
@@ -20,7 +16,7 @@ public class MyApplication extends Application {
 
 	public Map<String, Object> getProperties() {
 		Map<String, Object> properties = new HashMap<>();
-		// Configura o pacote para fazer scan das classes com anotações REST.
+		// Configura o pacote para fazer scan das classes com anotaï¿½ï¿½es REST.
 		properties.put("jersey.config.server.provider.packages", "br.com.livro");
 		return properties;
 	}
