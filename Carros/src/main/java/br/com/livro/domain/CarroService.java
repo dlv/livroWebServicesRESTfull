@@ -1,14 +1,17 @@
-package br.com.livro.services;
+package br.com.livro.domain;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.livro.daos.CarroDAO;
-import br.com.livro.domain.Carro;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CarroService {
-	private CarroDAO db = new CarroDAO();
+
+	@Autowired
+	private CarroDAO db;
 
 	// Lista todos os carros do banco de dados
 	public List<Carro> getCarros() {

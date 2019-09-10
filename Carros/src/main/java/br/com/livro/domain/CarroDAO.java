@@ -1,4 +1,4 @@
-package br.com.livro.daos;
+package br.com.livro.domain;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,9 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.livro.domain.Carro;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CarroDAO extends BaseDAO {
+
 	public Carro getCarroById(Long id) throws SQLException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -36,7 +38,7 @@ public class CarroDAO extends BaseDAO {
 	}
 
 	public List<Carro> findByName(String name) throws SQLException {
-		List<Carro> carros = new ArrayList<>();
+		List<Carro> carros = new ArrayList<Carro>();
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		try {
@@ -61,7 +63,7 @@ public class CarroDAO extends BaseDAO {
 	}
 
 	public List<Carro> findByTipo(String tipo) throws SQLException {
-		List<Carro> carros = new ArrayList<>();
+		List<Carro> carros = new ArrayList<Carro>();
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		try {
@@ -86,7 +88,7 @@ public class CarroDAO extends BaseDAO {
 	}
 
 	public List<Carro> getCarros() throws SQLException {
-		List<Carro> carros = new ArrayList<>();
+		List<Carro> carros = new ArrayList<Carro>();
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		try {

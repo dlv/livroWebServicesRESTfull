@@ -36,12 +36,10 @@ public class GsonMessageBodyHandler implements MessageBodyWriter<Object>, Messag
 		return gson;
 	}
 
-	@Override
 	public boolean isReadable(Class<?> arg0, Type arg1, Annotation[] arg2, MediaType arg3) {
 		return true;
 	}
 
-	@Override
 	public Object readFrom(Class<Object> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 			MultivaluedMap<String, String> httpHeaders, InputStream entityStream) throws IOException, WebApplicationException {
 		InputStreamReader streamReader = new InputStreamReader(entityStream, UTF_8);
@@ -59,17 +57,14 @@ public class GsonMessageBodyHandler implements MessageBodyWriter<Object>, Messag
 		}
 	}
 
-	@Override
 	public long getSize(Object arg0, Class<?> arg1, Type arg2, Annotation[] arg3, MediaType arg4) {
 		return -1;
 	}
 
-	@Override
 	public boolean isWriteable(Class<?> arg0, Type arg1, Annotation[] arg2, MediaType arg3) {
 		return true;
 	}
 
-	@Override
 	public void writeTo(Object object, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 			MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException, WebApplicationException {
 		OutputStreamWriter writer = new OutputStreamWriter(entityStream, UTF_8);
